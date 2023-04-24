@@ -388,7 +388,7 @@ class MessageBird
         $fp  = @fsockopen('ssl://' . $host, 443);
         $buf = '';
         if ($fp) {
-            @fputs($fp, "POST $path HTTP/1.1\r\n");
+            @fputs($fp, "POST $path HTTP/1.0\r\n");
             @fputs($fp, "Host: $host\r\n");
             @fputs($fp, "Content-type: application/x-www-form-urlencoded\r\n");
             @fputs($fp, "Content-length: " . strlen($postData) . "\r\n");
